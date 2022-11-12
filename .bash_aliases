@@ -1,0 +1,1 @@
+/Users/sh/Library/Mobile Documents/com~apple~CloudDocs/Mackup/.bash_aliases
