@@ -50,3 +50,23 @@ hs.hotkey.bind({'ctrl', 'shift'}, 'right', function()
   hs.spaces.moveWindowToSpace(focusedWindow, rightSpace);
   hs.spaces.gotoSpace(rightSpace)
 end)
+
+currentSpaceMenuBarItem = hs.menubar.new()
+
+function displayCurrentSpace()
+
+  local spaces = hs.spaces.spacesForScreen()
+  local currentSpace = hs.spaces.focusedSpace();
+  local currentSpaceIndex = table.indexOf(spaces, currentSpace);
+  currentSpaceMenuBarItem:setTitle(currentSpaceIndex)
+end
+
+displayCurrentSpace()
+
+currentSpaceWatcher = hs.spaces.watcher.new(function(space) 
+  displayCurrentSpace()
+end)
+
+currentSpaceWatcher.start(currentSpaceWatcher)
+
+
