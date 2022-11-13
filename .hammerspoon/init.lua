@@ -17,7 +17,7 @@ hs.hotkey.bind({'ctrl', 'shift'}, 'left', function()
   local currentSpace = hs.spaces.focusedSpace();
   local currentSpaceIndex = table.indexOf(spaces, currentSpace);
   
-  if currentSpaceIndex == nil or currentSpaceIndex == nil then
+  if currentSpaceIndex == 0 or currentSpaceIndex == nil then
     return
   end
 
