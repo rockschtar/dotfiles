@@ -6,7 +6,7 @@ function table.indexOf(t, object)
           return i
       end
   end
-end
+end 
 
 hs.hotkey.bind({'ctrl', 'shift'}, 'return', function() 
   hs.application.launchOrFocus('iTerm')
@@ -16,7 +16,10 @@ hs.hotkey.bind({'ctrl', 'shift'}, 'left', function()
   local spaces = hs.spaces.spacesForScreen()
   local currentSpace = hs.spaces.focusedSpace();
   local currentSpaceIndex = table.indexOf(spaces, currentSpace);
-  
+
+  print(hs.spaces.missionControlSpaceNames(true))
+
+
   if currentSpaceIndex == 0 or currentSpaceIndex == nil then
     return
   end
