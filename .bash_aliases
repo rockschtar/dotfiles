@@ -5,8 +5,9 @@ alias ipinfo="curl ip-api.com"
 alias cat="bat $1 -p"
 
 function transfer() {
-    curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename "$1") | tee /dev/null;
-    echo
+	curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename "$1") | tee /dev/null
+	echo
 }
 
 alias transfer=transfer
+alias firefox='open -a "Firefox Developer Edition"'

@@ -13,7 +13,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 # Default Editor
-export EDITOR=micro
+export EDITOR=nano
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -130,4 +130,3 @@ eval $(thefuck --alias)
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-
