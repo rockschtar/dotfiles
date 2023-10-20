@@ -1,4 +1,4 @@
-neofetch
+fastfetch --load-config $HOME/.config/fastfetch/config.jsonc --logo $HOME/.config/fastfetch/cyberdyne.ascii --logo-type file --logo-color-1 green
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -127,3 +127,16 @@ fi
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+
+
+# Herd injected PHP binary.
+export PATH="/Users/sh/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP 8.2 configuration.
+export HERD_PHP_82_INI_SCAN_DIR="/Users/sh/Library/Application Support/Herd/config/php/82/"
+
+
+# Herd injected PHP 8.1 configuration.
+export HERD_PHP_81_INI_SCAN_DIR="/Users/sh/Library/Application Support/Herd/config/php/81/"
