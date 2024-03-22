@@ -11,3 +11,8 @@ function transfer() {
 
 alias transfer=transfer
 alias firefox='open -a "Firefox Developer Edition"'
+
+if [ -f ~/.bash_aliases_local ]; then
+    . ~/.bash_aliases_local
+fi
+
