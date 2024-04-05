@@ -1,5 +1,5 @@
 #!/bin/bash
-LOGO_COLOR=""
+LOGO_COLOR="green"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
@@ -7,6 +7,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         source /etc/os-release
         if [[ "$ID" == "ubuntu" ]]; then
             LOGO_COLOR="red"
+        elif [[ "$ID" == "debian" ]]; then
+            LOGO_COLOR="red"    
         elif [[ "$ID" == "fedora" ]]; then
             LOGO_COLOR="blue"
         fi    fi
