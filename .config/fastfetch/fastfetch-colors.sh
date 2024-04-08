@@ -16,4 +16,5 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     LOGO_COLOR="green"
 fi
 
-fastfetch --load-config $HOME/.config/fastfetch/config.jsonc --logo $HOME/.config/fastfetch/cyberdyne.ascii --logo-type file --logo-color-1 $LOGO_COLOR
+#fastfetch --load-config $HOME/.config/fastfetch/config.jsonc --logo $HOME/.config/fastfetch/cyberdyne.ascii --logo-type file --logo-color-1 $LOGO_COLOR
+fastfetch --logo-color-1 $LOGO_COLOR
