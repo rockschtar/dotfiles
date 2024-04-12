@@ -26,6 +26,7 @@
         "publicip",
         "localip",
         "wifi",
+	"disk",
         "break",
         "colors"
     ]
