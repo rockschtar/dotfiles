@@ -127,3 +127,7 @@ fi
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+export FZF_DEFAULT_OPTS='--preview "bat -n --color=always --line-range :500 {}"'
+
+eval "$(fzf --zsh)"
