@@ -131,3 +131,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export FZF_DEFAULT_OPTS='--preview "bat -n --color=always --line-range :500 {}"'
 
 eval "$(fzf --zsh)"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
