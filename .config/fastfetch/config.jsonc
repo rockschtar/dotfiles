@@ -27,7 +27,6 @@
         "localip",
         "wifi",
 	"disk",
-        "break",
-        "colors"
+        "break"
     ]
 }
