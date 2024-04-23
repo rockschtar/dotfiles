@@ -128,7 +128,21 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
-export FZF_DEFAULT_OPTS='--preview "bat -n --color=always --line-range :500 {}"'
+BATCMD="bat"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+
+    if [ -f /etc/os-release ]; then
+        source /etc/os-release
+        if [[ "$ID" == "ubuntu" ]]; then
+            BATCMD="batcat"
+        elif [[ "$ID" == "debian" ]]; then
+            BATCMD="batcat"
+        fi    
+    fi
+fi
+
+export FZF_DEFAULT_OPTS="--preview \"$BATCMD -n --color=always --line-range :500 {}\""
 
 eval "$(fzf --zsh)"
 
