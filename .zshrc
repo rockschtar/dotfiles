@@ -142,10 +142,18 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     fi
 fi
 
+if [[ "$OSTYPE" == "linux-gnu"*  && "$(uname -m)" != "aarch64" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+if [[ "$OSTYPE" == "linux-gnu"*  && "$(uname -m)" == "aarch64" ]]; then
+	if [[ ! "$PATH" == */home/rockschtar/.fzf/bin* ]]; then
+  		PATH="${PATH:+${PATH}:}/home/rockschtar/.fzf/bin"
+	fi
+fi
+
 export FZF_DEFAULT_OPTS="--preview \"$BATCMD -n --color=always --line-range :500 {}\""
 
 eval "$(fzf --zsh)"
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
+
