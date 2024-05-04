@@ -16,3 +16,7 @@ if [ -f ~/.bash_aliases_local ]; then
     . ~/.bash_aliases_local
 fi
 
+function wttr() { 
+	location=$(curl ip-api.com/json --silent | jq .city)
+	curl "v2d.wttr.in/$location"
+}
