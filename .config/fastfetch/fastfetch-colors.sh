@@ -11,7 +11,12 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
             LOGO_COLOR="red"    
         elif [[ "$ID" == "fedora" ]]; then
             LOGO_COLOR="blue"
-        fi    fi
+        elif [[ "$ID" == "arch" ]]; then
+            LOGO_COLOR="cyan"
+        elif [[ "$ID" == "pop" ]]; then
+            LOGO_COLOR="cyan"        
+        fi    
+    fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     LOGO_COLOR="yellow"
 fi
