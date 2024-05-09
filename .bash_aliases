@@ -1,6 +1,5 @@
 alias la="lsd -al"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias myip="curl checkip.amazonaws.com"
 alias ipinfo="curl ip-api.com"
 alias cat="bat $1 -p"
 alias firefox='open -a "Firefox Developer Edition"'
@@ -14,6 +13,12 @@ function transfer() {
 function wttr() { 
 	location=$(curl ip-api.com/json --silent | jq .city)
 	curl "v2d.wttr.in/$location"
+}
+
+function myip() {
+	concatenated=$(curl ip-api.com/json --silent | jq -r '"\(.query) | \(.city) | \(.zip) | \(.isp)"')
+	echo $concatenated
+
 }
 
 if [ -f ~/.bash_aliases_local ]; then
