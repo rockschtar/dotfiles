@@ -1,0 +1,25 @@
+SPACESHIP_USER_SHOW=always
+SPACESHIP_PHP_SHOW=true
+
+SPACESHIP_DIR_TRUNC_REPO=false
+SPACESHIP_CHAR_SYMBOL="⮞ "
+SPACESHIP_GIT_PREFIX="on "
+SPACESHIP_USER_PREFIX=""
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
+SPACESHIP_PROMPT_ORDER=(
+    exec_time
+    line_sep
+    user
+    host
+    dir
+    line_sep
+    char
+)
+
+
+SPACESHIP_RPROMPT_ORDER=(
+    git
+)
+
+
+

@@ -1,7 +1,7 @@
 fastfetch
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nano
-#ZSH_THEME="pure"
+#ZSH_THEME="spaceship"
 
 CASE_SENSITIVE="true"
 ENABLE_CORRECTION="true"
@@ -54,11 +54,12 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 ### End of Zinit's installer chunk
 
-zstyle :prompt:pure:git:stash show yes
-zstyle :prompt:pure:path color '#3F94A8'
-zstyle :prompt:pure:prompt:success color '#5AB977'
+# zstyle :prompt:pure:git:stash show yes
+# zstyle :prompt:pure:path color '#3F94A8'
+# zstyle :prompt:pure:prompt:success color '#5AB977'
 
-zinit load zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-syntax-highlighting
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
+# zinit load zsh-users/zsh-autosuggestions
+# zinit light zsh-users/zsh-syntax-highlighting
+# zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+# zinit light sindresorhus/pure
+zinit light spaceship-prompt/spaceship-prompt
