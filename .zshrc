@@ -58,8 +58,8 @@ zinit light-mode for \
 # zstyle :prompt:pure:path color '#3F94A8'
 # zstyle :prompt:pure:prompt:success color '#5AB977'
 
-# zinit load zsh-users/zsh-autosuggestions
-# zinit light zsh-users/zsh-syntax-highlighting
+zinit load zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
 # zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 # zinit light sindresorhus/pure
 zinit light spaceship-prompt/spaceship-prompt
