@@ -1,4 +1,3 @@
-fastfetch
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nano
 #ZSH_THEME="spaceship"
@@ -11,7 +10,7 @@ HIST_STAMPS="dd.mm.yyyy"
 
 LANDO_ZSH_CONFIG_FILE=".lando.yml"
 LANDO_ZSH_SITES_DIRECTORY="$HOME/code"
-LANDO_ZSH_WRAPPED_COMMANDS="php composer phpcs phpcbf npm wp artisan dep"
+LANDO_ZSH_WRAPPED_COMMANDS="composer phpcs phpcbf npm wp artisan"
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#adadad"
 
