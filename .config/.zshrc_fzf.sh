@@ -13,7 +13,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"*  && "$(uname -m)" != "aarch64" ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  #eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"*  && "$(uname -m)" == "aarch64" ]]; then
