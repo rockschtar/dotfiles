@@ -61,4 +61,8 @@ zinit load zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 # zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 # zinit light sindresorhus/pure
-zinit light spaceship-prompt/spaceship-prompt
+# zinit light spaceship-prompt/spaceship-prompt
+#eval "$(oh-my-posh init zsh --config 'https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/spaceship.omp.json')"
+eval "$(oh-my-posh init zsh --config '~/.omp.json')"
+
+
