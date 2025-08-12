@@ -8,7 +8,14 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ipinfo="curl ip-api.com"
 
 # Display files with syntax highlighting
-alias cat="bat -p"
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [ "$ID" = "ubuntu" ]; then
+        alias cat='batcat'
+    fi
+else
+    alias cat="bat -p"
+fi
 
 # Open Firefox Developer Edition
 alias firefox='open -a "Firefox Developer Edition"'
