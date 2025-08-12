@@ -31,6 +31,8 @@ function transfer() {
 function wttr() {
     # Retrieve city information
     location=$(curl ip-api.com/json --silent | jq -r '.city')
+    location=$(echo -n "${location}" | jq -sRr @uri)
+    echo $location
     # Display weather information
     curl "v2d.wttr.in/$location"
 }
