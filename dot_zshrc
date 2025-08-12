@@ -1,3 +1,4 @@
+#test
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nano
 
