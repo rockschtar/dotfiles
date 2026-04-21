@@ -15,7 +15,7 @@ LANDO_ZSH_WRAPPED_COMMANDS="composer phpcs phpcbf npm wp artisan"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#adadad"
 PURE_GIT_UNTRACKED_DIRTY=0
 
-plugins=(git lando)
+plugins=(git lando brew macos docker)
 
 source $ZSH/oh-my-zsh.sh
 
