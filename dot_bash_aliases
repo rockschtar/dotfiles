@@ -42,6 +42,9 @@ function myip() {
     echo $(curl ip-api.com/json --silent | jq -r '"\(.query) | \(.city) | \(.zip) | \(.isp)"')
 }
 
+# Website Evidence Collector via Docker (EDPS)
+alias wec='docker run --rm -v "$HOME/wec-output:/output" code.europa.eu:4567/edps/website-evidence-collector/website-evidence-collector:latest collect --output /output'
+
 # Source local aliases if present
 if [ -f ~/.bash_aliases_local ]; then
     . ~/.bash_aliases_local
