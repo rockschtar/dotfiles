@@ -15,7 +15,7 @@ LANDO_ZSH_WRAPPED_COMMANDS="composer phpcs phpcbf npm wp artisan"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#adadad"
 PURE_GIT_UNTRACKED_DIRTY=0
 
-plugins=(git nvm lando)
+plugins=(git lando)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,6 +63,9 @@ eval "$(oh-my-posh init zsh --config '~/.omp.json')"
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+# Lando
+export PATH="$HOME/.lando/bin:$PATH"
 
 # Local bin
 export PATH="$HOME/.local/bin:$PATH"
