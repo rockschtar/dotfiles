@@ -77,3 +77,29 @@ export PATH="$HOME/.local/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# PHP version switcher (brew-based)
+phpv() {
+  if [ -z "$1" ]; then
+    echo "Usage: phpv <version>   e.g. phpv 8.4"
+    echo "Installed:"
+    for f in $(brew list --formula 2>/dev/null | grep -E '^php(@.+)?$'); do
+      printf "  %-10s %s\n" "$f" "$(brew list --versions "$f" | awk '{print $2}')"
+    done
+    command -v php >/dev/null && echo "Active: $(php -v | head -1)"
+    return 1
+  fi
+  local target=""
+  if brew list --formula 2>/dev/null | grep -qE "^php@${1}$"; then
+    target="php@$1"
+  elif brew list --versions php 2>/dev/null | awk '{print $2}' | grep -qE "^${1}\."; then
+    target="php"
+  else
+    echo "PHP $1 nicht installiert (brew install php@$1)"
+    return 1
+  fi
+  for f in $(brew list --formula 2>/dev/null | grep -E '^php(@.+)?$'); do
+    brew unlink "$f" >/dev/null 2>&1
+  done
+  brew link --overwrite --force "$target" >/dev/null && php -v | head -1
+}
