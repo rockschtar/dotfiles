@@ -1,0 +1,124 @@
+{
+  "attribution" : {
+    "commit" : "",
+    "pr" : ""
+  },
+  "effortLevel" : "xhigh",
+  "enabledPlugins" : {
+    "antigravity-bundle-web-designer@antigravity-awesome-skills" : true,
+    "antigravity-bundle-web-wizard@antigravity-awesome-skills" : true,
+    "claude-code-setup@claude-plugins-official" : true,
+    "claude-md-management@claude-plugins-official" : true,
+    "claude-wordpress-skills@claude-wordpress-skills" : true,
+    "commit-commands@claude-plugins-official" : true,
+    "feature-dev@claude-plugins-official" : true,
+    "gitlab@claude-plugins-official" : true,
+    "php-lsp@claude-plugins-official" : true,
+    "ponytail@ponytail" : false,
+    "superpowers@claude-plugins-official" : false,
+    "wordpress-agent-skills-9@cascade-code-general-misc-4" : true
+  },
+  "extraKnownMarketplaces" : {
+    "antigravity-awesome-skills" : {
+      "source" : {
+        "repo" : "sickn33\/antigravity-awesome-skills",
+        "source" : "github"
+      }
+    },
+    "cascade-code-general-misc-4" : {
+      "source" : {
+        "repo" : "joshuarweaver\/cascade-code-general-misc-4",
+        "source" : "github"
+      }
+    },
+    "claude-wordpress-skills" : {
+      "source" : {
+        "repo" : "elvismdev\/claude-wordpress-skills",
+        "source" : "github"
+      }
+    },
+    "ponytail" : {
+      "source" : {
+        "repo" : "DietrichGebert\/ponytail",
+        "source" : "github"
+      }
+    }
+  },
+  "hooks" : {
+    "PermissionRequest" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' awaiting \"$PPID\" ctx",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "PostToolUse" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' processing \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "PreToolUse" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' processing \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "SessionStart" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' idle \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "Stop" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' idle \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit" : [
+      {
+        "_otty" : true,
+        "hooks" : [
+          {
+            "command" : "OTTY_CLI='\/Applications\/Otty.app\/Contents\/MacOS\/otty-cli' '\/Applications\/Otty.app\/Contents\/Resources\/agent-integration\/claude\/otty-hook.sh' processing \"$PPID\"",
+            "type" : "command"
+          }
+        ]
+      }
+    ]
+  },
+  "language" : "German",
+  "model" : "claude-fable-5[1m]",
+  "skipWorkflowUsageWarning" : true,
+  "tui" : "fullscreen",
+  "voice" : {
+    "enabled" : true,
+    "mode" : "hold"
+  },
+  "voiceEnabled" : true
+}
