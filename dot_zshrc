@@ -103,3 +103,6 @@ phpv() {
   done
   brew link --overwrite --force "$target" >/dev/null && php -v | head -1
 }
+
+# atuin (Shell-History)
+eval "$(atuin init zsh)"
