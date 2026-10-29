@@ -114,3 +114,31 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
+
+# Time Machine: Dependency-Ordner nach Install sofort ausschließen (asimov erledigt den Rest täglich).
+# Respektiert das oh-my-zsh-Plugin "lando" (leitet npm/composer/yarn in Lando-Projekten an lando weiter).
+if [[ "$OSTYPE" == darwin* ]]; then
+  _tm_exclude_deps() {
+    [[ -d node_modules && -f package.json ]] && tmutil addexclusion node_modules 2>/dev/null
+    [[ -d vendor && -f composer.json ]] && tmutil addexclusion vendor 2>/dev/null
+    return 0
+  }
+  _tm_wrap() {
+    local cmd=$1; shift
+    if (( $+functions[_lando_file_exists] && ${${=LANDO_ZSH_WRAPPED_COMMANDS}[(Ie)$cmd]} )) \
+      && _lando_file_exists && command lando --help 2>&1 | command grep -Eq "^ +lando $cmd "; then
+      command lando "$cmd" "$@"
+    else
+      command "$cmd" "$@"
+    fi
+    local rc=$?
+    _tm_exclude_deps
+    return $rc
+  }
+  npm()      { _tm_wrap npm "$@"; }
+  pnpm()     { _tm_wrap pnpm "$@"; }
+  yarn()     { _tm_wrap yarn "$@"; }
+  bun()      { _tm_wrap bun "$@"; }
+  composer() { _tm_wrap composer "$@"; }
+  lando()    { command lando "$@"; local rc=$?; _tm_exclude_deps; return $rc; }
+fi
